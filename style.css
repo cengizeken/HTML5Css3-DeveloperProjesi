@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Russo+One&display=swap");
 *{
     font-family: 'poppins';
     padding: 0;
@@ -6,9 +6,15 @@
     box-sizing: border-box;
 }
 .group{
-    border: 10px solid red;
+    /* border: 10px solid red; */
+    /* height: 1000vh; */
+    position: relative;
+    /* background: radial-gradient(circle at 50% 50%, rgb(51,10,10),blue, orange); */
+    background: radial-gradient(circle at 50% 50%, rgb(51,10,10),rgb(5,5,21));
+    display: flex;
+    flex-direction: column;
 }
-
+/*HEADER START*/
 header
 {
     width: 100%;
@@ -18,6 +24,7 @@ header
     align-items: center;
     background-color: #39053163;
     padding: 20px 50px;
+    z-index: 15;
 }
 /*header içerisindeki logo ve menu classlarının yan yana geldiğini aşağıdaki gibi her iki class a da border vererek görebiliriz*/
 header .logo{
@@ -58,17 +65,202 @@ header .menu{
     color: #fd003b;
 }
 .menu i{
-    border:solid 5px red;
+    /* border:solid 5px red; */
     display: none;/*tasarlanan site responsive olacağından, ileride media etiketini kullanarak görünür hale getireceğim
     normal web görünümünde menu-content ler görünecek, tablet ve cep telefonu boyutlarında ise ikon(i) görünecek*/
 }
+/*HEADER END*/
 
+/*NAVBAR START*/
+nav{
+    /* border: solid 10px blue; */
+    height: 500px;
+    display: flex;/*kendi boyutu kadar alan kaplar*/
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+}
+nav .left{
+    /* border: 10px solid orange; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 10px;
+    padding: 0 50px;
+    color:white;
+}
+.animation{
+    /* border: solid 10px red; */
+    color: #c0d666;
+    width: 150px;/*100%;*//*animasypn(animationReact) bu genişliğe göre hareket ediyor. bunu yazmaz isem, kendi genişliğince olan bir alanda hareket eder*/
+    font-weight: 600;
+    font-size: 34px;
+    animation: animationReact 4s ease-in-out 0s 1000;
+}
+@keyframes animationReact{
+    0%{
+        transform: translateX(0%);
+    }
+    50%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+nav .left h1{
+    font-family: 'Russo One', sans-serif;
+}
+nav .left button{
+    padding: 7px;
+    color:white;
+    background: transparent;
+    font-size: 20px;
+    border: 2px solid #cab2bb;
+}
+nav .left button:hover{
+    border-radius: 10px !important;
+    border: 2px solid rgb(94,17,94);
+    transition: ease 0.2s;
+}
+/*mavbar end*/
+
+/*social media start*/
+.advert{
+    border:solid 10px purple;
+    background: #39053163;
+    height:80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    padding: 0 50px;
+}
+.icons
+{
+    border: 10px solid orange;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    /* animation: sosyalMedyaIconAnimation 3s ease-in 1000; */
+    animation: sosyalMedyaIconAnimation 3s ease-in infinite;
+    /* animation-iteration-count: infinite; */
+}
+@keyframes sosyalMedyaIconAnimation{
+    0%{
+        transform: translateX(10px);
+    }
+    50%{
+        transform: translateX(-10px);
+    }
+    100%{
+        transform: translateX(10px);
+    }
+}
+.advert img
+{
+    width: 40px;
+    cursor: pointer;
+}
+.bg
+{
+    position: absolute;
+    top: 10px;
+    width: 100%;
+    height: 100%;
+    opacity: 0.18;
+    object-fit: cover;
+    /* z-index: -1; */
+}
 /*TANIMLANAN class veya etiketlerin altında olduğu zaman çalışacaktır.*/
 /*RESPONSIVE AYARLAR*/
 /*tBLET İÇİN GENİŞLİK min=768 px, max:1023px*/
 @media screen and (min-width:768px) and (max-width:1023px){
-    header
+    /*header
     {
         background-color: green;
+    }*/
+    header .menu{
+        position: relative;/*header daki menu classına bağlı hareket edebilecek bir yapı tasarlamak istiyorum demek ref1*/
+        /* border: 10px solid blue; */
+        /* height: 500px; */
     }
+    header .menu:hover .menu-content{
+        background-color: #ccc;
+        display: flex;
+        /* border: 5px solid red; */
+        flex-direction: column;
+        /*position: fixed;*/ /*header .menu daki position relative ve aşağıdaki position absolute u kaldirip, bu satırın etkisini görmek istersek;
+        menü açıldığı yerde kalır ve sayfanın yukarı aşağı hareketi ile konum değiştirmez. sayfa yukarı aşağı giderken(scroll)
+        mrnü hep aynı yerinde kalır*//*ama absolute/relative kullanımında açılan menüde iconunda sabit kalır*/
+        position: absolute;/*.menu-content class ı, headerdaki .menu class ına bağlı olarak değişiyor bkz.ref1*/
+        /*konumunu menu class ına bağlı olarak belirlesin*/
+        /* top:0; */
+        top: 25px;
+        right: 0;
+        padding: 10px;
+        border-radius: 10px;
+    }
+    .menu-content a{
+        color: black !important
+    }
+     .menu-content a:hover
+     {
+        color: red !important;
+     }   
+    header .menu i{
+        display: flex;
+        font-size: 25px;
+        color: white;
+    }
+    header .menu .menu-content{
+        display: none;
+    }
+}
+/*mobil için ayarlar*/
+@media screen and (max-width:767px) {
+    /*header{
+background-color: purple;
+    }*/
+    header .menu{
+        position: relative;/*header daki menu classına bağlı hareket edebilecek bir yapı tasarlamak istiyorum demek ref1*/
+        /* border: 10px solid blue; */
+        /* height: 500px; */
+    }
+    header .menu:hover .menu-content{
+        background-color: #ccc;
+        display: flex;
+        /* border: 5px solid red; */
+        flex-direction: column;
+        /*position: fixed;*/ /*header .menu daki position relative ve aşağıdaki position absolute u kaldirip, bu satırın etkisini görmek istersek;
+        menü açıldığı yerde kalır ve sayfanın yukarı aşağı hareketi ile konum değiştirmez. sayfa yukarı aşağı giderken(scroll)
+        mrnü hep aynı yerinde kalır*//*ama absolute/relative kullanımında açılan menüde iconunda sabit kalır*/
+        position: absolute;/*.menu-content class ı, headerdaki .menu class ına bağlı olarak değişiyor bkz.ref1*/
+        /*konumunu menu class ına bağlı olarak belirlesin*/
+        /* top:0; */
+        top: 25px;
+        right: 0;
+        padding: 10px;
+        border-radius: 10px;
+    }
+     
+    header .menu i{
+        display: flex;
+        font-size: 25px;
+        color: white;
+    }
+    header .menu .menu-content{
+        display: none;
+    }
+    /*.menu-content a ve menu-content a:hover, "header .menu .menu-content" in üzerinde ise important kullanmak zorunda kalıyoruz*/
+    .menu-content a{
+        color: black;/* !important;*/
+    }
+     .menu-content a:hover
+     {
+        color: red;/*!important;*/
+     } 
 }
