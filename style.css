@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+*{
+    font-family: 'poppins';
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.group{
+    border: 10px solid red;
+}
+
+header
+{
+    width: 100%;
+    /* border: 5px solid blue;  */
+    display: flex;/*header tag ı içerisindeki  logo ve menu classlarımı yan yana getir.*/
+    justify-content: space-between;/*logo ve menu classlarını iki uca yasla*/
+    align-items: center;
+    background-color: #39053163;
+    padding: 20px 50px;
+}
+/*header içerisindeki logo ve menu classlarının yan yana geldiğini aşağıdaki gibi her iki class a da border vererek görebiliriz*/
+header .logo{
+    /* border: 5px solid green; */
+}
+header .logo a{
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    font-size: 25px;
+}
+header .logo a b{
+    /*border: 2px solid yellow;*//*hangi alanı değiştireceğimizi görmek için bloklar şeklinde borderlar çizmek faydalı oluyor*/
+    color: #fd003b;
+}
+header .logo i{
+    color: white;
+    font-size: 25px;
+}
+header .menu{
+    /* border:solid 5px aqua; */
+    display: flex;
+    align-items: center;
+}
+.menu .menu-content{
+    /* border:solid 5px blue; */
+    display: flex;
+    flex-direction: row;
+    gap:20px
+}
+.menu .menu-content a{
+    /* border: solid 2px green; */
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+}
+.menu .menu-content a:hover{
+    color: #fd003b;
+}
+.menu i{
+    border:solid 5px red;
+    display: none;/*tasarlanan site responsive olacağından, ileride media etiketini kullanarak görünür hale getireceğim
+    normal web görünümünde menu-content ler görünecek, tablet ve cep telefonu boyutlarında ise ikon(i) görünecek*/
+}
+
+/*TANIMLANAN class veya etiketlerin altında olduğu zaman çalışacaktır.*/
+/*RESPONSIVE AYARLAR*/
+/*tBLET İÇİN GENİŞLİK min=768 px, max:1023px*/
+@media screen and (min-width:768px) and (max-width:1023px){
+    header
+    {
+        background-color: green;
+    }
+}
