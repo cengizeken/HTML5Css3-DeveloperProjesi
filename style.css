@@ -232,6 +232,186 @@ aside h1{
     border: 4px solid #500523;
     border-radius: 20px;
 }
+/*CARDLAR BİTTİ*/
+/*ABOUT START*/
+article{
+    /* border: 10px solid red; */
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px;
+}
+article h1{
+    font-size: 36px;
+}
+article p{
+   margin-bottom: 40px;
+   color: #c13e73;
+   text-align: center; 
+}
+.about{
+    /* border: solid 5px green; */
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+.about .about-left{
+    /* border: 10px solid blue; */
+    width: 60%;
+}
+.about .about-right{
+    /* border: 10px solid purple; */
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 7px;
+}
+.about-left img{
+    width: 450px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+.about-right h2{
+    margin-bottom: 10px;
+    color:#c13e73 ;
+    font-size: 30px;
+    text-align: center;
+}
+.about-right button{
+    padding: 7px;
+    margin-top: 30px;color: white;
+    background: linear-gradient(to left, #c13e73, #ee156c);
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+}
+.contact {
+    background-color: black;
+    color: white;
+    display: flex;
+    padding: 50px;
+    gap: 40px;
+    align-items: center;
+  }
+  
+  .contact-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 70px;
+    gap: 22px;
+    justify-content: center;
+  }
+  .contact-left h2 {
+    font-size: 36px;
+  }
+  .contact-left a {
+    text-decoration: none;
+    color: #5c5454;
+  }
+  .contact-left li {
+    list-style-type: none;
+  }
+  .contact-left h2 span {
+    color: #500523;
+  }
+  
+  .contact-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 50px 0;
+  }
+  .contact-right input,
+  .contact-right textarea {
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #2a2a2a;
+    font-size: 17px;
+    font-weight: 500;
+    color: white;
+    border: none;
+  }
+  .contact-right textarea {
+    height: 130px;
+  }
+  .contact-right button {
+    padding: 7px;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    border: 4px solid #500523;
+    background-color: transparent;
+    margin: 0 70px;
+    width: 200px;
+    align-self: center;
+  }
+  
+  footer {
+    background-color: #2a2a2a;
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 50px;
+    align-items: center;
+  }
+  .footer-left {
+    flex: 1;
+    display: flex;
+    gap: 20px;
+    color: white;
+    flex-direction: column;
+  }
+  .footer-left-social i {
+    color: white;
+    margin-left: 5px;
+  }
+  .footer-left-social i:hover {
+    color: #500523;
+    transform: scale(1.4);
+    transition: ease 0.7s;
+  }
+  
+  footer .footer-left .logo a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    font-size: 25px;
+  }
+  footer .footer-left .logo a span {
+    color: #fd003b;
+  }
+  
+  .footer-right {
+    display: flex;
+    flex: 1.2;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-top: 30px;
+  }
+  .footer-right ul {
+    width: 150px;
+  }
+  .footer-right ul li:first-child {
+    color: black;
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  .footer-right li {
+    color: white;
+    list-style-type: none;
+  }
+  .footer-left-rights {
+    margin-top: 35px;
+  }
+/*ABOUT END*
+/
 /*TANIMLANAN class veya etiketlerin altında olduğu zaman çalışacaktır.*/
 /*RESPONSIVE AYARLAR*/
 /*tBLET İÇİN GENİŞLİK min=768 px, max:1023px*/
@@ -276,6 +456,44 @@ aside h1{
     header .menu .menu-content{
         display: none;
     }
+    .about{
+        flex-direction: column;
+        gap: 0;
+      }
+      .about .about-left{
+        width: 80%;
+      }
+      .about-left img{
+        width: 100%;
+        height: 200px;
+      }
+      .about-right{
+        align-items: center;
+        padding-top: 25px;
+      }
+      .about-right span{
+        text-align: center;
+      }
+      .contact {
+        flex-direction: column;
+        gap: 0;
+      }
+      .contact-left {
+        padding-bottom: 0;
+        text-align: center;
+      }
+      .contact-right {
+        width: 100%;
+      }
+      footer {
+        flex-direction: column;
+      }
+      .footer-right {
+        gap: 10px;
+      }
+      .footer-right ul {
+        text-align: center;
+      }
 }
 /*mobil için ayarlar*/
 @media screen and (max-width:767px) {
@@ -323,4 +541,42 @@ background-color: purple;
      .cards .card{
         width: 80%;
      }
+     .about{
+        flex-direction: column;
+        gap: 0;
+      }
+      .about .about-left{
+        width: 80%;
+      }
+      .about-left img{
+        width: 100%;
+        height: 200px;
+      }
+      .about-right{
+        align-items: center;
+        padding-top: 25px;
+      }
+      .about-right span{
+        text-align: center;
+      }
+      .contact {
+        flex-direction: column;
+        gap: 0;
+      }
+      .contact-left {
+        padding-bottom: 0;
+        text-align: center;
+      }
+      .contact-right {
+        width: 100%;
+      }
+      footer {
+        flex-direction: column;
+      }
+      .footer-right {
+        gap: 10px;
+      }
+      .footer-right ul {
+        text-align: center;
+      }
 }
